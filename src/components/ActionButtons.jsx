@@ -1,29 +1,17 @@
-import { View, Text, StyleSheet} from 'react-native';
-import { COLORS } from '../constants/colors';
+import { StatusBar, View } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { Header } from "./src/components/Header";
 
-export function ActionButtons() {
-    return (
+export default function App() {
+
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <StatusBar barStyle={'auto'} />
         <View>
-
-        <Text>Adicionar Consumo</Text>
-        {/* <Button>+200 ml</Button>
-        <Button>+350 ml</Button>
-        <Button>+500 ml</Button>
-        <Button>🔁 Resetar Dia</Button> */}
-
+          <Header objetivo={2000} />
         </View>
-
-    );
-
-    
+      </SafeAreaView>
+    </SafeAreaProvider>
+  )
 }
-
-const styles = StyleSheet.create({
-    text: {
-        color: COLORS.textMain,
-        fontSize: 16,
-        textAlign: 'center',
-    },
-});
-
-export default ActionButtons
