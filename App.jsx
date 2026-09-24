@@ -1,33 +1,20 @@
-import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
-import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context";
+import { StatusBar, View} from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Header } from "./src/components/Header";
 import { WaterProgress } from "./src/components/WaterProgress";
 
-export default function App() {
-    const GOAL = 2000;
-    const CONSUMIDO = 200;
+export default function App(){
+  const GOAL = 2000
 
-    return (
-        <SafeAreaProvider>
-            <SafeAreaView style={styles.container}>
-                <StatusBar style="auto" />
-
-                <View style={styles.container}>
-                    <Header goal={GOAL} />
-
-                    <WaterProgress
-                        consumido={CONSUMIDO}
-                        objetivo={GOAL}
-                    />
-                </View>
-            </SafeAreaView>
-        </SafeAreaProvider>
-    );
+  return(
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <StatusBar barStyle={'auto'} />
+        <View >
+          <Header goal={GOAL} />
+          <WaterProgress consumed={2000} goal={GOAL} />
+        </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
+  )
 }
-
-const styles = {
-    container: {
-        flex: 1,
-    },
-};
