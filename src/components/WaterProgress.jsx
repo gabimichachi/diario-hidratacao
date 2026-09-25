@@ -3,8 +3,8 @@ import COLORS from "../constants/colors";
 
 
 export function WaterProgress({ consumed, goal}) {
-
-  const  porcentagem = Math.min(Math.round((consumed/goal)*100), 100)
+  // cálculo da porcentagem atingida para a barra visual //
+  const  porcentagem = Math.min(Math.round((consumed/goal) *100), 100);
 
   return (
 
@@ -13,7 +13,7 @@ export function WaterProgress({ consumed, goal}) {
       <Text style={styles.title}    > Você bebeu {consumed}ml de água hoje. </Text>
       <Text style={styles.subtitle} > Você atingiu {porcentagem}% da Meta               </Text>
 
-      {/* {BARRA AZUL} */}
+      {/*barra de progresso */}
       <View style={styles.progressBarBackground}>
         <View style={[styles.progressBarFill, { width: `${porcentagem}%` }]} />
       </View>
